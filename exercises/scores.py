@@ -1,4 +1,4 @@
-""" Programming crash course, module 3, exercise 1
+""" Python training exercise
 
 Snooker scores
 
