@@ -50,7 +50,7 @@ def build_exercises(source_folder, dest_fldr):
                 matches = pattern.finditer(soln)
                 for match in matches:
                     exer = pattern.sub('', exer, count=1)
-                    soln = pattern.sub(match.group('soln'), soln, count=1)
+                    soln = pattern.sub('\g<soln>', soln, count=1)
 
                 # Write the files to the destination folders.
                 with open(os.path.join(soln_fldr, f), 'w') as fout:
