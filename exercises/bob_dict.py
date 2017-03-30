@@ -1,20 +1,26 @@
 """ Python training exercise
 
-Bob database entry - as a list
+Bob database entry - as a dictionary
 
 Below is a list containing information about "Bob".
 """
 
-record = ['Bob', 'Builder, the', 1.85, 34, '2 Main Street']
+record = {
+    'name': 'Bob',
+    'surname': 'Builder, the',
+    'height': 1.85,
+    'age': 34,
+    'address': '2 Main Street'
+}
 
 
-# (a) Get and print Bob's age (index 3), height and address.
+# (a) Get and print Bob's age, height and address.
 
 # YOUR CODE HERE.
-age = record[3]
+age = record['age']
 # <<<<<<< SOLUTION
-height = record[2]
-address = record[4]
+height = record['height']
+address = record['address']
 print("Bob's age is", age)
 print("Bob's height is", height)
 print("Bob's address is", address)
@@ -25,7 +31,7 @@ print("Bob's address is", address)
 
 # YOUR CODE HERE.
 # <<<<<<< SOLUTION
-record.append('AB25 1SP')
+record['postcode'] = 'AB25 1SP'
 print("Bob's record after added post code:")
 print(record)
 # =======
@@ -34,13 +40,13 @@ print(record)
 
 # YOUR CODE HERE.
 # <<<<<<< SOLUTION
-age = record[3] + 1
-record[3] = age
+age = record['age'] + 1
+record['age'] = age
 print("Bob's record after increase his age:")
 print(record)
 
 # Alternative solution:
-record[3] += 1
+record['age'] += 1
 print("Bob's record after increase his age a second time:")
 print(record)
 # =======
@@ -50,10 +56,11 @@ print(record)
 
 # YOUR CODE HERE.
 # <<<<<<< SOLUTION
-record[4] = '16 Bank Lane'
-record[5] = 'AB16 3DD'
+record['address'] = '16 Bank Lane'
+record['postcode'] = 'AB16 3DD'
 # Alternatively,
-record[4:6] = ['16 Bank Lane', 'AB16 3DD']
+new_data = {'address': '16 Bank Lane', 'postcode': 'AB16 3DD'}
+record.update(new_data)
 print("Bob's record after changing address:")
 print(record)
 # =======
