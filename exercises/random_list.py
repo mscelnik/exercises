@@ -10,10 +10,14 @@ and the list sub-functions, can you?:
 
 (b) What are the smallest and largest numbers?
     HINT: There are two ways to do this; get directly from the ordered list, or
-          use the built-in min/max functions.
+          use the built-in min/max functions.  Use a negative index to get the
+          largest number.
 
 (c) How many numbers are greater than or equal to 50?
     HINT: Use the index sub-function to locate 50 in the ordered data.
+
+(d) What is the sum of the last 4 numbers?
+    HINT: Use negative indices, and a colon (:) to take a list slice.
 """
 
 data = [
@@ -29,7 +33,6 @@ data = [
     28, 22, 11, 0, 79, 47, 60, 17, 98, 84, 43, 62, 46, 64, 41, 27, 41, 0, 73,
     89, 1, 92, 12, 1, 49, 46, 54, 99
 ]
-
 
 # (a) Sort the list.
 #     HINT: Use the sorted() built-in function.
@@ -65,4 +68,13 @@ print('Largest number is {}.'.format(largest))
 i = ordered_data.index(50)
 n = len(ordered_data) - i
 print('There are {} numbers >= 50.'.format(n))
+# =======
+
+# (d) What is the sum of the last 4 numbers?
+# Hint: The sum of the first 4 numbers is:
+total = sum(data[:4])
+print('First 4 numbers total is {}.'.format(total))
+# <<<<<<< SOLUTION
+total = sum(data[-4:])
+print('Last 4 numbers total is {}.'.format(total))
 # =======
